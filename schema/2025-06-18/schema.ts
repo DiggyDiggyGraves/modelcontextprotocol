@@ -1,5 +1,7 @@
 /* JSON-RPC types */
 
+import { Tool } from "./tool";
+
 /**
  * Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
  */
@@ -810,49 +812,6 @@ export interface ToolAnnotations {
    * Default: true
    */
   openWorldHint?: boolean;
-}
-
-/**
- * Definition for a tool the client can call.
- */
-export interface Tool extends BaseMetadata {
-  /**
-   * A human-readable description of the tool.
-   *
-   * This can be used by clients to improve the LLM's understanding of available tools. It can be thought of like a "hint" to the model.
-   */
-  description?: string;
-
-  /**
-   * A JSON Schema object defining the expected parameters for the tool.
-   */
-  inputSchema: {
-    type: "object";
-    properties?: { [key: string]: object };
-    required?: string[];
-  };
-
-  /**
-   * An optional JSON Schema object defining the structure of the tool's output returned in
-   * the structuredContent field of a CallToolResult.
-   */
-  outputSchema?: {
-    type: "object";
-    properties?: { [key: string]: object };
-    required?: string[];
-  };
-
-  /**
-   * Optional additional tool information.
-   *
-   * Display name precedence order is: title, annotations.title, then name.
-   */
-  annotations?: ToolAnnotations;
-
-  /**
-   * See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
-   */
-  _meta?: { [key: string]: unknown };
 }
 
 /* Logging */
