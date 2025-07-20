@@ -1,7 +1,5 @@
 /* JSON-RPC types */
 
-import { Tool } from "./tool";
-
 /**
  * Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
  */
@@ -57,6 +55,7 @@ export interface Result {
    * See [specification/2025-06-18/basic/index#general-fields] for notes on _meta usage.
    */
   _meta?: { [key: string]: unknown };
+
   [key: string]: unknown;
 }
 
@@ -689,6 +688,7 @@ export interface EmbeddedResource {
    */
   _meta?: { [key: string]: unknown };
 }
+
 /**
  * An optional notification from the server to the client, informing it that the list of prompts it offers has changed. This may be issued by servers without any previous subscription from the client.
  */

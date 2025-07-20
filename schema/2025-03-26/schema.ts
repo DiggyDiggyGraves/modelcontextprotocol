@@ -1,4 +1,6 @@
-/* JSON-RPC types */
+/**
+ * JSON-RPC types
+ */
 
 /**
  * Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
@@ -1229,10 +1231,8 @@ export type ClientNotification =
   | ProgressNotification
   | InitializedNotification
   | RootsListChangedNotification;
-
-export type ClientResult = EmptyResult | CreateMessageResult | ListRootsResult;
-
-/* Server messages */
+/*import { Server } from "node:tls";
+ Server messages */
 export type ServerRequest =
   | PingRequest
   | CreateMessageRequest
