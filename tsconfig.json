@@ -7,10 +7,11 @@
     "allowImportingTsExtensions":,
     "allowJs": false,
     "allowSyntheticDefaultImports":,
-    //    "strict":false
     "allowUmdGlobalAccess": false,
     "allowUnreachableCode":,
     "allowUnusedLabels":,
+    //    "strict":false
+
     "alwaysStrict":,
     "assumeChangesOnlyAffectDirectDependencies":,
     "baseUrl":,
